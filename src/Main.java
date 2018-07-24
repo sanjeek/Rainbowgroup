@@ -10,7 +10,7 @@ public class Main {
 	private static Calendar CAL;
 	private static SimpleDateFormat SDF;
 	
-	
+	// simple calculate is design by zohaib badarpura
 	private static String Get_menu() {
 		StringBuilder sb = new StringBuilder();
 		
