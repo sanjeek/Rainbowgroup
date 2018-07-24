@@ -37,6 +37,7 @@ public class Main {
 	}
 
 
+	// syntax recheck by Rehman Sayani
 	public static void main(String[] args) {		
 		try {			
 			IN = new Scanner(System.in);
@@ -120,7 +121,8 @@ public class Main {
 		output("\nEnded\n");
 	}	
 
-		private static void payFine() {
+	
+	private static void payFine() {
 		new PayFineUI(new PayFineControl()).run();		
 	}
 
