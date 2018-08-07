@@ -10,26 +10,27 @@ public class Main {
 	private static Calendar CAL;
 	private static SimpleDateFormat SDF;
 	
-	// simple calculate is design by zohaib badarpura
+	// simple calculate is design by Zohaib Badarpura
+	// Team : Rainbow Group
 	private static String Get_menu() {
 		StringBuilder sb = new StringBuilder();
 		
 		sb.append("\nLibrary Main Menu\n\n")
-		  .append("  M  : add member\n")
-		  .append("  LM : list members\n")
+		  .append("  M  : Add Member\n")
+		  .append("  LM : List Members\n")
 		  .append("\n")
-		  .append("  B  : add book\n")
-		  .append("  LB : list books\n")
-		  .append("  FB : fix books\n")
+		  .append("  B  : Add Book\n")
+		  .append("  LB : List Books\n")
+		  .append("  FB : Fix Books\n")
 		  .append("\n")
-		  .append("  L  : take out a loan\n")
-		  .append("  R  : return a loan\n")
-		  .append("  LL : list loans\n")
+		  .append("  L  : Take out a Loan\n")
+		  .append("  R  : Return a Loan\n")
+		  .append("  LL : List Loans\n")
 		  .append("\n")
-		  .append("  P  : pay fine\n")
+		  .append("  P  : Pay Fine\n")
 		  .append("\n")
-		  .append("  T  : increment date\n")
-		  .append("  Q  : quit\n")
+		  .append("  T  : Increment Date\n")
+		  .append("  Q  : Quit\n")
 		  .append("\n")
 		  .append("Choice : ");
 		  
