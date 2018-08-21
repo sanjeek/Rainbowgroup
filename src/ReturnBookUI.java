@@ -20,14 +20,14 @@ public class ReturnBookUI {
 
 
 	public void run() {		
-		output("Return Book Use Case UI\n");
+		    System.out.println("Return Book Use Case UI\n"); // Change the output to  System.out.println.
 		
 		while (true) {
 			
 			switch (state) {
 			
 			case INITIALISED:
-				break;
+			break;
 				
 			case READY:
 				String bookStr = input("Scan Book (<enter> completes): ");
@@ -40,7 +40,7 @@ public class ReturnBookUI {
 						control.bookScanned(bookId);
 					}
 					catch (NumberFormatException e) {
-						output("Invalid bookId");
+						System.out.println("Invalid bookId"); // Change the output to  System.out.println.
 					}					
 				}
 				break;				
@@ -54,11 +54,11 @@ public class ReturnBookUI {
 				control.dischargeLoan(isDamaged);
 			
 			case COMPLETED:
-				output("Return processing complete");
+				System.out.println("Return processing complete"); // Change the output to  System.out.println.
 				return;
 			
 			default:
-				output("Unhandled state");
+			System.out.println("Unhandled state");
 				throw new RuntimeException("ReturnBookUI : unhandled state :" + state);			
 			}
 		}
