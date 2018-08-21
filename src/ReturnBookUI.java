@@ -6,13 +6,14 @@ public class ReturnBookUI {
 	public static enum UI_STATE { INITIALISED, READY, INSPECTING, COMPLETED };
 
 	private ReturnBookControl control;
-	private Scanner input;
+	private static Scanner scanner = new Scanner( System.in ); // change the scanner input.
 	private UI_STATE state;
 
 	
 	public ReturnBookUI(ReturnBookControl control) {
 		this.control = control;
-		input = new Scanner(System.in);
+		Scanner scanner = new Scanner( System.in ); // change the scanner input..
+		
 		state = UI_STATE.INITIALISED;
 		control.setUI(this);
 	}
