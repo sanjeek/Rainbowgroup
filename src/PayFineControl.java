@@ -1,11 +1,11 @@
 public class PayFineControl {
 	
-	private PayFineUI ui;
+	private PayFineUI ui;// this class not define
 	private enum CONTROL_STATE { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };
 	private CONTROL_STATE state;
 	
-	private library library;
-	private member member;
+	private library library;//this class not define
+	private member member;//thisclass not define
 
 
 	public PayFineControl() {
