@@ -11,7 +11,7 @@ public class BorrowBookUI {
 
 	
 	public BorrowBookUI(BorrowBookControl control) {
-		this.control = control;
+		//this.control = control; no need of this method
 		input = new Scanner(System.in);
 		state = UI_STATE.INITIALISED;
 		control.setUI(this);
