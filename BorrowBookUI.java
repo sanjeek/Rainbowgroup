@@ -1,11 +1,10 @@
 import java.util.Scanner;
 
-
 public class BorrowBookUI {
 	
 	public static enum UI_STATE { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
 
-	private BorrowBookControl control;
+	private BorrowBookControl control;//this class not defned//
 	private Scanner input;
 	private UI_STATE state;
 
