@@ -12,7 +12,7 @@ public class Main {
 	
 	// simple calculate is design by Zohaib Badarpura
 	// Team : Rainbow Group
-	private static String Getmenu() {
+	private static String getmenu() {
 		StringBuilder sb = new StringBuilder();
 		
 		sb.append("\nLibrary Main Menu\n\n")
@@ -54,7 +54,7 @@ public class Main {
 				output(b);
 			}
 						
-			MENU = Getmenu();
+			MENU = getmenu();
 			
 			boolean e = false;
 			
