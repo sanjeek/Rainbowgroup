@@ -29,11 +29,11 @@ public class library implements Serializable {
 	private int LID;
 	private Date loadDate;
 	
-	private Map<Integer, book> catalog;
-	private Map<Integer, member> members;
-	private Map<Integer, loan> loans;
-	private Map<Integer, loan> currentLoans;
-	private Map<Integer, book> damagedBooks;
+	private Map<Integer, book> catalog;// class not defined
+	private Map<Integer, member> members;//class not defined	
+	private Map<Integer, loan> loans;//class not defned
+	private Map<Integer, loan> currentLoans;//class not defined
+	private Map<Integer, book> damagedBooks;//class not defined
 	
 
 	private library() {
