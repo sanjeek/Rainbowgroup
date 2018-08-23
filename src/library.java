@@ -82,12 +82,12 @@ public class library implements Serializable {
 	}
 
 	
-	public int BookID() {
+	public int bookID() {
 		return BID;
 	}
 	
 	
-	public int MemberID() {
+	public int memberID() {
 		return MID;
 	}
 	
@@ -107,7 +107,7 @@ public class library implements Serializable {
 	}
 
 	
-	public List<member> Members() {		
+	public List<member> members() {		
 		return new ArrayList<member>(members.values()); 
 	}
 
