@@ -76,7 +76,7 @@ public class library implements Serializable {
 				lof.close();	
 			}
 			catch (Exception e) {
-				throw new RuntimeException(e);
+				throw new RuntimeException(e);//run time exception
 			}
 		}
 	}
