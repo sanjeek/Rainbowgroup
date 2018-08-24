@@ -54,7 +54,7 @@ public class Main {
 						
 			MENU = Get_menu();
 			
-			boolean e = false;
+			boolean e = false;//no need to give boolean function
 			
 			while (!e) {
 				
