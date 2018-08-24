@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.util.*;
 
 
 @SuppressWarnings("serial")
@@ -14,7 +15,7 @@ public class book implements Serializable {
 	
 	
 	public book(String author, String title, String callNo, int id) {
-		this.A = author;
+		this.A = author;// this method is no need
 		this.T = title;
 		this.C = callNo;
 		this.ID = id;
