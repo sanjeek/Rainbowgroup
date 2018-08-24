@@ -1,15 +1,16 @@
 public class FixBookControl {
 	
 	private FixBookUI ui;
-	private enum CONTROL_STATE { INITIALISED, READY, FIXING };
+	private Enum CONTROL_STATE { INITIALISED, READY, FIXING }; //enum to Enum by Author 
 	private CONTROL_STATE state;
 	
-	private library library;
+	private Library library; // Changed library to Library by Author 
+	
 	private book currentBook;
 
 
 	public FixBookControl() {
-		this.library = library.INSTANCE();
+		this.library = library.INSTANCE();// Method INSTANCE is changed to instance by Author 
 		state = CONTROL_STATE.INITIALISED;
 	}
 	
@@ -28,7 +29,7 @@ public class FixBookControl {
 		if (!state.equals(CONTROL_STATE.READY)) {
 			throw new RuntimeException("FixBookControl: cannot call bookScanned except in READY state");
 		}	
-		currentBook = library.Book(bookId);
+		currentBook = library.book(bookId);// Method changed Book to book by Author 
 		
 		if (currentBook == null) {
 			ui.display("Invalid bookId");
@@ -64,7 +65,9 @@ public class FixBookControl {
 		ui.setState(FixBookUI.UI_STATE.COMPLETED);		
 	}
 
-
+//Author Rehman
+//Reviewer	Sanjeev
+//Moderator	Vamakumaran
 
 
 

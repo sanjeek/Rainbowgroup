@@ -4,12 +4,12 @@ public class ReturnBookControl {
 	private enum CONTROL_STATE { INITIALISED, READY, INSPECTING };
 	private CONTROL_STATE state;
 	
-	private library library;
-	private loan currentLoan;
+	private Library library; // change class name library to Library
+	private Loan currentLoan;// change class name loan to Loan
 	
 
 	public ReturnBookControl() {
-		this.library = library.INSTANCE();
+		this.library = Library.INSTANCE();//changed instance library  to Library 
 		state = CONTROL_STATE.INITIALISED;
 	}
 	
@@ -28,7 +28,7 @@ public class ReturnBookControl {
 		if (!state.equals(CONTROL_STATE.READY)) {
 			throw new RuntimeException("ReturnBookControl: cannot call bookScanned except in READY state");
 		}	
-		book currentBook = library.Book(bookId);
+		Book currentBook = library.Book(bookId); //change book class to Book
 		
 		if (currentBook == null) {
 			ui.display("Invalid Book Id");
@@ -72,6 +72,8 @@ public class ReturnBookControl {
 		ui.setState(ReturnBookUI.UI_STATE.READY);
 		state = CONTROL_STATE.READY;				
 	}
-
+//Moderator	Vamakumaran
+//Reviewer	Sanjeev
+//Author	Rehman
 
 }
