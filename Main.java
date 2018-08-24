@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 	
-	private static Scanner IN;
+	private static Scanner IN;//class isnot defined
 	private static library LIB;
 	private static String MENU;
 	private static Calendar CAL;
@@ -120,7 +120,8 @@ public class Main {
 		output("\nEnded\n");
 	}	
 
-		private static void payFine() {
+	
+	private static void payFine() {
 		new PayFineUI(new PayFineControl()).run();		
 	}
 
