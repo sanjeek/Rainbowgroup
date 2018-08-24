@@ -93,7 +93,7 @@ public class BorrowBookControl {
 
 	public void commitLoans() {
 		if (!state.equals(CONTROL_STATE.FINALISING)) {
-			throw new RuntimeException("BorrowBookControl: cannot call commitLoans except in FINALISING state");
+			throw new RuntimeException("BorrowBookControl: cannot call commitLoans except in FINALISING state");// runtime exception
 		}	
 		for (book b : PENDING) {
 			loan loan = L.issueLoan(b, M);
