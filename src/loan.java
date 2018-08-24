@@ -12,7 +12,7 @@ public class loan implements Serializable {
 	private book B;// Class name Starting with capital letter and varibale name in 
 	//starting with small letter is good for programming conventional
 	private member M;// Class name Starting with capital letter and varibale name in 
-	//starting with small letter is good for programming conventional
+	//starting with small letter is good for programming conventionall
 	private Date D;
 	private LOAN_STATE state;
 
