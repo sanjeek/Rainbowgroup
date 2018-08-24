@@ -1,3 +1,5 @@
+package com.stb.tih.batch.writer;
+
 import java.util.Scanner;
 
 
@@ -6,7 +8,7 @@ public class PayFineUI {
 
 	public static enum UI_STATE { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };
 
-	private PayFineControl control;
+	private PayFineControl control; //  This class not defined
 	private Scanner input;
 	private UI_STATE state;
 
@@ -56,7 +58,7 @@ public class PayFineUI {
 				try {
 					amount = Double.valueOf(amtStr).doubleValue();
 				}
-				catch (NumberFormatException e) {}
+				catch (NumberFormatException e) {} // Inside Catch must give valid output
 				if (amount <= 0) {
 					output("Amount must be positive");
 					break;
@@ -86,12 +88,12 @@ public class PayFineUI {
 		return input.nextLine();
 	}	
 		
-		
+	//Rathar tha using Object we can use String as method parameter	
 	private void output(Object object) {
 		System.out.println(object);
 	}	
 			
-
+        //Could have one public method to print
 	public void display(Object object) {
 		output(object);
 	}
