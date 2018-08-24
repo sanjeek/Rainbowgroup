@@ -4,16 +4,13 @@ import java.util.Date;
 
 @SuppressWarnings("serial")
 public class loan implements Serializable {
-	// Class name Starting with capital letter is conventional
+	
 	
 	public static enum LOAN_STATE { CURRENT, OVER_DUE, DISCHARGED };
 	
 	private int ID;
-	private book B;// Class name Starting with capital letter and varibale name in
-	//starting with small letter is good for programming conventional
-	private member M;// Class name Starting with capital letter and varibale name in 
-	//starting with small letter is good for programming conventional
-	private Date D;
+	private book B;
+	private member M;
 	private LOAN_STATE state;
 
 	
@@ -28,7 +25,7 @@ public class loan implements Serializable {
 	
 	public void checkOverDue() {
 		if (state == LOAN_STATE.CURRENT &&
-			Calendar.getInstance().Date().after(D)) {// Calendar is not imported
+			Calendar.getInstance().Date().after(D)) {
 			this.state = LOAN_STATE.OVER_DUE;			
 		}
 	}
@@ -51,7 +48,7 @@ public class loan implements Serializable {
 	
 	public String toString() {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		//Surround this code with try catch clause because ParseException can be thrown
+		
 
 		StringBuilder sb = new StringBuilder();
 		sb.append("Loan:  ").append(ID).append("\n")
@@ -65,14 +62,14 @@ public class loan implements Serializable {
 	}
 
 
-	public member Member() {// Method name Starting with small letters is good for programming convention
+	public member Member() {
 		return M;
 	
 	}
 
 
 	
-	public book Book() { // Method name Starting with small letters is good for programming convention
+	public book Book() {
 		return B;
 	}
 
