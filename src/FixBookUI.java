@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class FixBookUI {
 
-	public static enum UiState { INITIALISED, READY, FIXING, COMPLETED };// Reaname enum UI_STATE to UiState.
+	public static enum UI_STATE { INITIALISED, READY, FIXING, COMPLETED };
 
 	private FixBookControl control;
 	private Scanner input;
@@ -13,8 +13,8 @@ public class FixBookUI {
 	public FixBookUI(FixBookControl control) {
 		this.control = control;
 		input = new Scanner(System.in);
-		state = UiState.INITIALISED;
-		control.setUI(this);
+		state = UI_STATE.INITIALISED;
+		control.UI_STATE(this);
 	}
 
 
