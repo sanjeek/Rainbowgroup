@@ -3,12 +3,14 @@ import java.util.Scanner;
 
 public class ReturnBookUI {
 
+	//Remove duplication of code
 
 	public static enum UiState { INITIALISED, READY, INSPECTING, COMPLETED };
 
 	private ReturnBookControl control;
 	private Scanner input;
-	private UiState state; // UI_STATE renamed to UiState
+	//Need revision -  UiState to UI_STATE
+	private UiState state; // UI_STATE renamed to UiState 
 
 
 	public static enum UiState  (INITIALISED, READY, INSPECTING, COMPLETED) ; //Reaname UT_STAE to UiState and change the { to (
@@ -36,9 +38,11 @@ public class ReturnBookUI {
 
 		Scanner scanner = new Scanner( System.in ); // Change the scanner input..
 		
+		//need review - UiState to UI_State
 		state = UiState.INITIALISED;                // Reaname UT_STAE to UiState
 		Scanner input = new Scanner(System.in); //change the input to Scanner input
 		
+		//need review - UiState to UI_State
 		state = UiState.INITIALISED; //UI_STATE renamed to UiState
  
 
@@ -46,10 +50,6 @@ public class ReturnBookUI {
 	}
  
 
-
-	public void run() 
-	{							      // Change the place {
-		    System.out.println("Return Book Use Case UI\n"); // Change the output to  System.out.println.
 
 	public void run() {		
 		System.out.print("Return Book Use Case UI\n"); //output rename to system.out.print
@@ -82,6 +82,7 @@ public class ReturnBookUI {
 						System.out.println("Invalid bookId"); // Change the output to  System.out.println.
 
 					catch (NumberFormatException e) {
+						
 						System.out.print("Invalid bookId"); //output rename to system.out.print
 						
 
@@ -142,8 +143,10 @@ public class ReturnBookUI {
 	public void setState(UiState state) {
 
 
+		//need review - UiState to UI_State
 	public void setState(UiState state) // Reaname UT_STAE to UiState
 
+		//need review - UiState to UI_State
 	public void setState(UiState state) //UI_STATE renamed to UiState 
 
 	{
