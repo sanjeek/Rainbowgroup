@@ -4,6 +4,13 @@ import java.util.Scanner;
 public class ReturnBookUI {
 
 
+	public static enum UiState { INITIALISED, READY, INSPECTING, COMPLETED };
+
+	private ReturnBookControl control;
+	private Scanner input;
+	private UiState state; // UI_STATE renamed to UiState
+
+
 	public static enum UiState  (INITIALISED, READY, INSPECTING, COMPLETED) ; //Reaname UT_STAE to UiState and change the { to (
 
 	private ReturnBookControl control;
@@ -17,10 +24,15 @@ public class ReturnBookUI {
 	private UiState state; //UI_STATE renamed to UiState
 
 
+
 	
 	public ReturnBookUI(ReturnBookControl control)
 	{ 							// Change the place {
 		this.control = control;
+
+		input = new Scanner(System.in);
+		state = UiState.INITIALISED;
+
 
 		Scanner scanner = new Scanner( System.in ); // Change the scanner input..
 		
@@ -29,6 +41,7 @@ public class ReturnBookUI {
 		
 		state = UiState.INITIALISED; //UI_STATE renamed to UiState
  
+
 		control.setUI(this);
 	}
  
@@ -125,6 +138,9 @@ public class ReturnBookUI {
 		output(object);
 	}
 	
+
+	public void setState(UiState state) {
+
 
 	public void setState(UiState state) // Reaname UT_STAE to UiState
 
