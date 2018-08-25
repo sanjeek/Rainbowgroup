@@ -3,17 +3,18 @@ import java.util.Scanner;
 
 public class FixBookUI {
 
+	//Need revision UiState should be UI_STATE
 	public static enum UiState { INITIALISED, READY, FIXING, COMPLETED };// Reaname enum UI_STATE to UiState.
 
 	private FixBookControl control;
 	private Scanner input;
-	private UiState state;
+	private UiState state;//Need revision UiState should be UI_STATE
 
 	
-	public FixBookUI(FixBookControl control) {
+	public FixBookUI(FixBookControl control) { //Need revision method name should be fixBookUI
 		this.control = control;
 		input = new Scanner(System.in);
-		state = UiState.INITIALISED;
+		state = UiState.INITIALISED;//Need revision UiState should be UI_STATE
 		control.setUI(this);
 	}
 
@@ -85,4 +86,8 @@ public class FixBookUI {
 	}
 	
 	
+//Moderator	Zohaib
+//Reviewer	Rehman
+//Author	Sanjeev
+
 }
