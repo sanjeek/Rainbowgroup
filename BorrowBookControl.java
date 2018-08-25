@@ -5,7 +5,7 @@ public class BorrowBookControl {
 	
 	private BorrowBookUI ui;
 	
-	private library L;//class is not defined
+	private library L;
 	private member M;
 	private enum CONTROL_STATE { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
 	private CONTROL_STATE state;
@@ -31,7 +31,7 @@ public class BorrowBookControl {
 	}
 
 		
-	public void swiped(int memberId) {
+	public void Swiped(int memberId) {
 		if (!state.equals(CONTROL_STATE.READY)) 
 			throw new RuntimeException("BorrowBookControl: cannot call cardSwiped except in READY state");
 			
@@ -50,10 +50,10 @@ public class BorrowBookControl {
 			ui.setState(BorrowBookUI.UI_STATE.RESTRICTED); }}
 	
 	
-	public void scanned(int bookId) {
+	public void Scanned(int bookId) {
 		B = null;
 		if (!state.equals(CONTROL_STATE.SCANNING)) {
-			throw new RuntimeException("BorrowBookControl: cannot call bookScanned except in SCANNING state");//un exceptional error
+			throw new RuntimeException("BorrowBookControl: cannot call bookScanned except in SCANNING state");
 		}	
 		B = L.Book(bookId);
 		if (B == null) {
@@ -70,12 +70,12 @@ public class BorrowBookControl {
 		}
 		if (L.loansRemainingForMember(M) - PENDING.size() == 0) {
 			ui.display("Loan limit reached");
-			complete();
+			Complete();
 		}
 	}
 	
 	
-	public void complete() {
+	public void Complete() {
 		if (PENDING.size() == 0) {
 			cancel();
 		}
@@ -93,7 +93,7 @@ public class BorrowBookControl {
 
 	public void commitLoans() {
 		if (!state.equals(CONTROL_STATE.FINALISING)) {
-			throw new RuntimeException("BorrowBookControl: cannot call commitLoans except in FINALISING state");// runtime exception
+			throw new RuntimeException("BorrowBookControl: cannot call commitLoans except in FINALISING state");
 		}	
 		for (book b : PENDING) {
 			loan loan = L.issueLoan(b, M);
