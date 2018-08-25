@@ -1,28 +1,24 @@
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
-//this file Review by sanjeevan there are no issues.
-// File is review by Zohaib Badarpura and There are no errors in this file.
-public class HelloWorld{
 
-     public static void main(String []args){
+public class Calendar {
 	
-	class Calendar { // class defintion with default 
-         Calendar self; // varaible define with default
-		 java.util.Calendar cal;
+	private static Calendar self;
+	private static java.util.Calendar cal;
 	
 	
-	private Calendar() { // non  static method 
+	private Calendar() {
 		cal = java.util.Calendar.getInstance();
 	}
 	
-	public  Calendar getInstance() { // non static method
+	public static Calendar getInstance() {
 		if (self == null) {
 			self = new Calendar();
 		}
 		return self;
 	}
 	
-	public void incrementDate(int days) { // method with no return 
+	public void incrementDate(int days) {
 		cal.add(java.util.Calendar.DATE, days);		
 	}
 	
@@ -46,12 +42,12 @@ public class HelloWorld{
 	        cal.set(java.util.Calendar.MILLISECOND, 0);
 			return cal.getTime();
 		}
-		catch (Exception e) { // execption handling 
+		catch (Exception e) {
 			throw new RuntimeException(e);
 		}	
 	}
 
-	public synchronized Date getDueDate(int loanPeriod) { // method with return the date 
+	public synchronized Date getDueDate(int loanPeriod) {
 		Date now = Date();
 		cal.add(java.util.Calendar.DATE, loanPeriod);
 		Date dueDate = cal.getTime();
@@ -59,7 +55,7 @@ public class HelloWorld{
 		return dueDate;
 	}
 	
-	public synchronized long getDaysDifference(Date targetDate) { // method with the return a number 
+	public synchronized long getDaysDifference(Date targetDate) {
 		long diffMillis = Date().getTime() - targetDate.getTime();
 	    long diffDays = TimeUnit.DAYS.convert(diffMillis, TimeUnit.MILLISECONDS);
 	    return diffDays;

@@ -11,11 +11,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.calender;
 
 @SuppressWarnings("serial")
 public class library implements Serializable {
-	//File is review by kumaran and There are no errors in this file.
+	
 	private static final String LIBRARY_FILE = "library.obj";
 	private static final int LOAN_LIMIT = 2;
 	private static final int LOAN_PERIOD = 2;
@@ -29,11 +28,11 @@ public class library implements Serializable {
 	private int LID;
 	private Date loadDate;
 	
-	private Map<Integer, book> catalog;// class not defined
-	private Map<Integer, member> members;//class not defined	
-	private Map<Integer, loan> loans;//class not defned
-	private Map<Integer, loan> currentLoans;//class not defined
-	private Map<Integer, book> damagedBooks;//class not defined
+	private Map<Integer, book> catalog;
+	private Map<Integer, member> members;
+	private Map<Integer, loan> loans;
+	private Map<Integer, loan> currentLoans;
+	private Map<Integer, book> damagedBooks;
 	
 
 	private library() {
@@ -77,18 +76,18 @@ public class library implements Serializable {
 				lof.close();	
 			}
 			catch (Exception e) {
-				throw new RuntimeException(e);//run time exception
+				throw new RuntimeException(e);
 			}
 		}
 	}
 
 	
-	public int bookID() {
+	public int BookID() {
 		return BID;
 	}
 	
 	
-	public int memberID() {
+	public int MemberID() {
 		return MID;
 	}
 	
@@ -108,7 +107,7 @@ public class library implements Serializable {
 	}
 
 	
-	public List<member> members() {		
+	public List<member> Members() {		
 		return new ArrayList<member>(members.values()); 
 	}
 

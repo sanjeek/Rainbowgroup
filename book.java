@@ -1,11 +1,9 @@
 import java.io.Serializable;
-//this file Review by sanjeevan there are no issues.
+import java.util.*;
+
 
 @SuppressWarnings("serial")
-
-public class Book implements Serializable {  //Change Class Name book to Book
-
-public class Book implements Serializable {
+public class book implements Serializable {
 	
 	private String T;
 	private String A;
@@ -17,7 +15,7 @@ public class Book implements Serializable {
 	
 	
 	public book(String author, String title, String callNo, int id) {
-		this.A = author;
+		this.A = author;// this method is no need
 		this.T = title;
 		this.C = callNo;
 		this.ID = id;
@@ -35,32 +33,32 @@ public class Book implements Serializable {
 		return sb.toString();
 	}
 
-	public Integer id() {
+	public Integer ID() {
 		return ID;
 	}
 
-	public String title() {
+	public String Title() {
 		return T;
 	}
 
 
 	
-	public boolean available() {
+	public boolean Available() {
 		return state == STATE.AVAILABLE;
 	}
 
 	
-	public boolean onloan() {
+	public boolean On_loan() {
 		return state == STATE.ON_LOAN;
 	}
 
 	
-	public boolean damaged() {
+	public boolean Damaged() {
 		return state == STATE.DAMAGED;
 	}
 
 	
-	public void borrow() {
+	public void Borrow() {
 		if (state.equals(STATE.AVAILABLE)) {
 			state = STATE.ON_LOAN;
 		}
@@ -71,7 +69,7 @@ public class Book implements Serializable {
 	}
 
 
-	public void return(boolean DAMAGED) {
+	public void Return(boolean DAMAGED) {
 		if (state.equals(STATE.ON_LOAN)) {
 			if (DAMAGED) {
 				state = STATE.DAMAGED;
@@ -86,7 +84,7 @@ public class Book implements Serializable {
 	}
 
 	
-	public void repair() {
+	public void Repair() {
 		if (state.equals(STATE.DAMAGED)) {
 			state = STATE.AVAILABLE;
 		}
