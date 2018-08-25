@@ -1,11 +1,11 @@
 public class PayFineControl {
 	
-	private PayFineUI ui;// this class not define
+	private PayFineUI ui;
 	private enum CONTROL_STATE { INITIALISED, READY, PAYING, COMPLETED, CANCELLED };
 	private CONTROL_STATE state;
 	
-	private library library;//this class not define
-	private member member;//thisclass not define
+	private library library;
+	private member member;;
 
 
 	public PayFineControl() {
@@ -26,7 +26,7 @@ public class PayFineControl {
 
 	public void cardSwiped(int memberId) {
 		if (!state.equals(CONTROL_STATE.READY)) {
-			throw new RuntimeException("PayFineControl: cannot call cardSwiped except in READY state");//run time error//
+			throw new RuntimeException("PayFineControl: cannot call cardSwiped except in READY state");
 		}	
 		member = library.getMember(memberId);
 		
@@ -48,7 +48,7 @@ public class PayFineControl {
 
 	public double payFine(double amount) {
 		if (!state.equals(CONTROL_STATE.PAYING)) {
-			throw new RuntimeException("PayFineControl: cannot call payFine except in PAYING state");// exception cant return
+			throw new RuntimeException("PayFineControl: cannot call payFine except in PAYING state");
 		}	
 		double change = member.payFine(amount);
 		if (change > 0) {

@@ -4,33 +4,32 @@ import java.util.Scanner;
 
 public class Main {
 	
-	private static Scanner IN;
+	private static Scanner IN;//class isnot defined
 	private static library LIB;
 	private static String MENU;
 	private static Calendar CAL;
 	private static SimpleDateFormat SDF;
 	
-	// simple calculate is design by Zohaib Badarpura
-	// Team : Rainbow Group
-	private static String getmenu() {
+	
+	private static String Get_menu() {
 		StringBuilder sb = new StringBuilder();
 		
 		sb.append("\nLibrary Main Menu\n\n")
-		  .append("  M  : Add Member\n")
-		  .append("  LM : List Members\n")
+		  .append("  M  : add member\n")
+		  .append("  LM : list members\n")
 		  .append("\n")
-		  .append("  B  : Add Book\n")
-		  .append("  LB : List Books\n")
-		  .append("  FB : Fix Books\n")
+		  .append("  B  : add book\n")
+		  .append("  LB : list books\n")
+		  .append("  FB : fix books\n")
 		  .append("\n")
-		  .append("  L  : Take out a Loan\n")
-		  .append("  R  : Return a Loan\n")
-		  .append("  LL : List Loans\n")
+		  .append("  L  : take out a loan\n")
+		  .append("  R  : return a loan\n")
+		  .append("  LL : list loans\n")
 		  .append("\n")
-		  .append("  P  : Pay Fine\n")
+		  .append("  P  : pay fine\n")
 		  .append("\n")
-		  .append("  T  : Increment Date\n")
-		  .append("  Q  : Quit\n")
+		  .append("  T  : increment date\n")
+		  .append("  Q  : quit\n")
 		  .append("\n")
 		  .append("Choice : ");
 		  
@@ -38,7 +37,6 @@ public class Main {
 	}
 
 
-	// syntax recheck by Rehman Sayani
 	public static void main(String[] args) {		
 		try {			
 			IN = new Scanner(System.in);
@@ -54,9 +52,9 @@ public class Main {
 				output(b);
 			}
 						
-			MENU = getmenu();
+			MENU = Get_menu();
 			
-			boolean e = false;
+			boolean e = false;//no need to give boolean function
 			
 			while (!e) {
 				
