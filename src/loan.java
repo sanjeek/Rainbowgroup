@@ -3,16 +3,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @SuppressWarnings("serial")
-public class loan implements Serializable {
+public class Loan implements Serializable {
 	// Class name Starting with capital letter is conventional
 	
 	public static enum LOAN_STATE { CURRENT, OVER_DUE, DISCHARGED };
 	
 	private int ID;
-	private book B;// Class name Starting with capital letter and varibale name in 
-	//starting with small letter is good for programming conventional
-	private member M;// Class name Starting with capital letter and varibale name in 
-	//starting with small letter is good for programming conventionall
+	private book b;// Class name Starting with capital letter and varibale name in starting with small letter is good for programming conventionall
+	
+	private member ;// Class name Starting with capital letter and varibale name in starting with small letter is good for programming conventionall
+	
 	private Date D;
 	private LOAN_STATE state;
 
@@ -65,12 +65,12 @@ public class loan implements Serializable {
 	}
 
 
-	public member Member() {// Method name Starting with small letters is goof for programming convention
+	public member member() {// Method name Starting with small letters is goof for programming convention
 		return M;
 	}
 
 
-	public book Book() { // Method name Starting with small letters is goof for programming convention
+	public book book() { // Method name Starting with small letters is goof for programming convention
 		return B;
 	}
 
