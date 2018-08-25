@@ -2,17 +2,15 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-// File is review by Zohaib Badarpura and There are 4 errors in this file. Details are on wiki
-
 @SuppressWarnings("serial")
 public class loan implements Serializable {
-	
 	
 	public static enum LOAN_STATE { CURRENT, OVER_DUE, DISCHARGED };
 	
 	private int ID;
 	private book B;
 	private member M;
+	private Date D;
 	private LOAN_STATE state;
 
 	
@@ -50,7 +48,6 @@ public class loan implements Serializable {
 	
 	public String toString() {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		
 
 		StringBuilder sb = new StringBuilder();
 		sb.append("Loan:  ").append(ID).append("\n")
@@ -66,11 +63,9 @@ public class loan implements Serializable {
 
 	public member Member() {
 		return M;
-	
 	}
 
 
-	
 	public book Book() {
 		return B;
 	}
