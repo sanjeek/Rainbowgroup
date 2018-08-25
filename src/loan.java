@@ -2,6 +2,8 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+// File is review by Zohaib Badarpura and There are 4 errors in this file. Details are on wiki
+
 @SuppressWarnings("serial")
 public class loan implements Serializable {
 	
