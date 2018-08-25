@@ -1,17 +1,16 @@
 import java.util.Scanner;
-imort  java.util.Buffer;
 
 public class BorrowBookUI {
 	
 	public static enum UI_STATE { INITIALISED, READY, RESTRICTED, SCANNING, IDENTIFIED, FINALISING, COMPLETED, CANCELLED };
 
-	private BorrowBookControl control;// this class is not defined//
+	private BorrowBookControl control;//this class not defned//
 	private Scanner input;
 	private UI_STATE state;
 
 	
 	public BorrowBookUI(BorrowBookControl control) {
-		//this.control = control; no need of this method
+		this.control = control;
 		input = new Scanner(System.in);
 		state = UI_STATE.INITIALISED;
 		control.setUI(this);
@@ -71,7 +70,7 @@ public class BorrowBookUI {
 			case SCANNING:
 				String bookStr = input("Scan Book (<enter> completes): ");
 				if (bookStr.length() == 0) {
-					this.control.Complete();
+					control.Complete();
 					break;
 				}
 				try {
@@ -87,7 +86,7 @@ public class BorrowBookUI {
 			case FINALISING:
 				String ans = input("Commit loans? (Y/N): ");
 				if (ans.toUpperCase().equals("N")) {
-					this.control.cancel();
+					control.cancel();
 					
 				} else {
 					control.commitLoans();

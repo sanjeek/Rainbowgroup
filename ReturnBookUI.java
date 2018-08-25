@@ -3,24 +3,23 @@ import java.util.Scanner;
 
 public class ReturnBookUI {
 
-	public static enum UiState { INITIALISED, READY, INSPECTING, COMPLETED };//UI_STATE renamed to UiState
+	public static enum UI_STATE { INITIALISED, READY, INSPECTING, COMPLETED };
 
 	private ReturnBookControl control;
 	private Scanner input;
-	private UiState state; //UI_STATE renamed to UiState
+	private UI_STATE state;
 
 	
 	public ReturnBookUI(ReturnBookControl control) {
 		this.control = control;
-		Scanner input = new Scanner(System.in); //change the input to Scanner input
-		
-		state = UiState.INITIALISED; //UI_STATE renamed to UiState
+		input = new Scanner(System.in);
+		state = UI_STATE.INITIALISED;
 		control.setUI(this);
 	}
- 
+
 
 	public void run() {		
-		System.out.print("Return Book Use Case UI\n"); //output rename to system.out.print
+		output("Return Book Use Case UI\n");
 		
 		while (true) {
 			
@@ -40,8 +39,7 @@ public class ReturnBookUI {
 						control.bookScanned(bookId);
 					}
 					catch (NumberFormatException e) {
-						System.out.print("Invalid bookId"); //output rename to system.out.print
-						
+						output("Invalid bookId");
 					}					
 				}
 				break;				
@@ -55,13 +53,11 @@ public class ReturnBookUI {
 				control.dischargeLoan(isDamaged);
 			
 			case COMPLETED:
-				System.out.print("Return processing complete"); //output rename to system.out.print
-				
+				output("Return processing complete");
 				return;
 			
 			default:
-				System.out.print("Unhandled state"); //output rename to system.out.print
-				
+				output("Unhandled state");
 				throw new RuntimeException("ReturnBookUI : unhandled state :" + state);			
 			}
 		}
@@ -83,8 +79,7 @@ public class ReturnBookUI {
 		output(object);
 	}
 	
-	public void setState(UiState state) //UI_STATE renamed to UiState 
-	{
+	public void setState(UI_STATE state) {
 		this.state = state;
 	}
 

@@ -3,29 +3,28 @@ import java.util.Scanner;
 
 public class FixBookUI {
 
-	//Need revision UiState should be UI_STATE
-	public static enum UiState { INITIALISED, READY, FIXING, COMPLETED };// Reaname enum UI_STATE to UiState.
+	public static enum UI_STATE { INITIALISED, READY, FIXING, COMPLETED };
 
 	private FixBookControl control;
 	private Scanner input;
-	private UiState state;//Need revision UiState should be UI_STATE
+	private UI_STATE state;
 
 	
-	public FixBookUI(FixBookControl control) { //Need revision method name should be fixBookUI
+	public FixBookUI(FixBookControl control) {
 		this.control = control;
 		input = new Scanner(System.in);
-		state = UiState.INITIALISED;//Need revision UiState should be UI_STATE
+		state = UI_STATE.INITIALISED;
 		control.setUI(this);
 	}
 
 
-	public void setState(UiState state) {
+	public void setState(UI_STATE state) {
 		this.state = state;
 	}
 
 	
 	public void run() {
-		System.out.println("Fix Book Use Case UI\n"); //Change the Output to System.out.println
+		output("Fix Book Use Case UI\n");
 		
 		while (true) {
 			
@@ -42,7 +41,7 @@ public class FixBookUI {
 						control.bookScanned(bookId);
 					}
 					catch (NumberFormatException e) {
-						System.out.println("Invalid bookId");
+						output("Invalid bookId");
 					}
 				}
 				break;	
@@ -57,11 +56,11 @@ public class FixBookUI {
 				break;
 								
 			case COMPLETED:
-				System.out.println("Fixing process complete");
+				output("Fixing process complete");
 				return;
 			
 			default:
-				System.out.println("Unhandled state");
+				output("Unhandled state");
 				throw new RuntimeException("FixBookUI : unhandled state :" + state);			
 			
 			}		
@@ -86,8 +85,4 @@ public class FixBookUI {
 	}
 	
 	
-//Moderator	Zohaib
-//Reviewer	Rehman
-//Author	Sanjeev
-
 }

@@ -2,26 +2,15 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-// File is review by Zohaib Badarpura and There are 4 errors in this file. Details are on wiki
-
 @SuppressWarnings("serial")
-public class Loan implements Serializable {
-	// Class name Starting with capital letter is conventional
-	
+public class loan implements Serializable {
 	
 	public static enum LOAN_STATE { CURRENT, OVER_DUE, DISCHARGED };
 	
 	private int ID;
-
-	private book b;// Class name Starting with capital letter and varibale name in starting with small letter is good for programming conventionall
-	
-	private member ;// Class name Starting with capital letter and varibale name in starting with small letter is good for programming conventionall
-	
-	private Date D;
-
 	private book B;
 	private member M;
-
+	private Date D;
 	private LOAN_STATE state;
 
 	
@@ -60,11 +49,6 @@ public class Loan implements Serializable {
 	public String toString() {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-		//Surround this code with try catch clause because ParseException can be thrown
-
-		
-
-
 		StringBuilder sb = new StringBuilder();
 		sb.append("Loan:  ").append(ID).append("\n")
 		  .append("  Borrower ").append(M.getId()).append(" : ")
@@ -77,18 +61,12 @@ public class Loan implements Serializable {
 	}
 
 
-	public member member() {// Method name Starting with small letters is goof for programming convention
+	public member Member() {
 		return M;
-	
 	}
 
 
-
-	public book book() { // Method name Starting with small letters is goof for programming convention
-
-	
 	public book Book() {
-
 		return B;
 	}
 
