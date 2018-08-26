@@ -39,8 +39,12 @@ public class ReturnBookUI {
 		state = UiState.INITIALISED;                // Reaname UT_STAE to UiState
 		Scanner input = new Scanner(System.in); //change the input to Scanner input
 		
+
 		state = UiState.INITIALISED; //UI_STATE renamed to UiState
  
+
+
+		state = UiState.INITIALISED; 
 
 		control.setUI(this);
 	}
