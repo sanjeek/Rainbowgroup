@@ -4,28 +4,38 @@ import java.util.Scanner;
 
 public class FixBookUI {
 
-	public static enum UiState { INITIALISED, READY, FIXING, COMPLETED };// Reaname enum UI_STATE to UiState.
+
+	public static enum UI_STATE { INITIALISED, READY, FIXING, COMPLETED };
+
+	
+	public static enum UiState { INITIALISED, READY, FIXING, COMPLETED };
+
 
 	private FixBookControl control;
 	private Scanner input;
-	private UiState state;
+	private UI_STATE state;
 
 	
-	public FixBookUI(FixBookControl control) {
+	public FixBookUI(FixBookControl control) { 
 		this.control = control;
 		input = new Scanner(System.in);
-		state = UiState.INITIALISED;
+
+		state = UI_STATE.INITIALISED;
+		control.UI_STATE(this);
+
+		state = UI_STATE.INITIALISED;
 		control.setUI(this);
+
 	}
 
 
-	public void setState(UiState state) {
+	public void setState(UI_STATE state) {
 		this.state = state;
 	}
 
 	
 	public void run() {
-		System.out.println("Fix Book Use Case UI\n"); //Change the Output to System.out.println
+		System.out.println("Fix Book Use Case UI\n"); 
 		
 		while (true) {
 			
@@ -86,4 +96,8 @@ public class FixBookUI {
 	}
 	
 	
+//Moderator	Zohaib
+//Reviewer	Rehman
+//Author	Sanjeev
+
 }
